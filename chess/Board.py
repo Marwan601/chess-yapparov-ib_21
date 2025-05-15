@@ -1,4 +1,5 @@
 from chess.Color import WHITE, BLACK
+from chess.Knight import Knight
 from chess.Pawn import Pawn
 from chess.Rook import Rook
 
@@ -17,6 +18,13 @@ class Board:
         for col in [0, 7]:
             self.__board[0][col] = Rook(WHITE)
             self.__board[7][col] = Rook(BLACK)
+        for col in [1, 6]:
+            self.__board[0][col] = Knight(WHITE)
+            self.__board[7][col] = Knight(BLACK)
+        for col in [1, 6]:
+            self.__board[0][col] = Knight(WHITE)
+            self.__board[7][col] = Knight(BLACK)
+
 
     @property
     def player(self) -> int:

@@ -32,3 +32,4 @@ class Rook(Figure):
                 if figure:
                     return False
         return True
+

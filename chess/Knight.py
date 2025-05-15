@@ -20,5 +20,19 @@ class Knight(Figure):
         row_diff = abs(row_end - row_start)
         return col_diff == 2 and row_diff == 1 or col_diff == 1 and row_diff == 2
 
-
+    def can_attack(
+        self,
+            board: Board,
+            row_start: int,
+            col_start: int,
+            row_end: int,
+            col_end: int) -> bool:
+        is_white = self.color == WHITE
+        if col_end != col_start-1 and col_end != col_start+1:
+            return False
+        if is_white and row_end != row_start + 1:
+            return False
+        if not is_white and row_end != row_start - 1:
+            return False
+        return True
 
