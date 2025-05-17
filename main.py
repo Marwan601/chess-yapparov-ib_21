@@ -48,7 +48,7 @@ while True:
         parts = cmd.split()
         if len(parts) != 2:
             raise Exception('Неверный формат ввода!')
-        regexp = r'^[A-F]{1}[1-8]{1}$'
+        regexp = r'^[A-H]{1}[1-8]{1}$'
         for part in parts:
             if not re.match(regexp, part):
                 raise Exception(f'Неверная координата: {part}')

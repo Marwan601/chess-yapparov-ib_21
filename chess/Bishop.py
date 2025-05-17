@@ -26,11 +26,11 @@ class Bishop(Figure):
         row_step = 1 if row_start < row_end else -1
         col_step = 1 if col_start < col_end else -1
         for i in range(col_diff - 1):
+            row += row_step
+            col += col_step
             other_player = board.get_item(row, col)
             if other_player:
                 return False
-            row += row_step
-            col += col_step
         return True
 
 

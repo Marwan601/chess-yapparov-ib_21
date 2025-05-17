@@ -2,6 +2,9 @@ from chess.Color import WHITE, BLACK
 from chess.Knight import Knight
 from chess.Pawn import Pawn
 from chess.Rook import Rook
+from chess.Bishop import Bishop
+from chess.King import King
+from chess.Queen import Queen
 
 class Board:
     def __init__(self):
@@ -13,7 +16,7 @@ class Board:
             self.__board.append(cols)
         self.__player = WHITE
         for col in range(8):
-            self.__board[5][col] = Pawn(WHITE)
+            self.__board[1][col] = Pawn(WHITE)
             self.__board[6][col] = Pawn(BLACK)
         for col in [0, 7]:
             self.__board[0][col] = Rook(WHITE)
@@ -21,9 +24,15 @@ class Board:
         for col in [1, 6]:
             self.__board[0][col] = Knight(WHITE)
             self.__board[7][col] = Knight(BLACK)
-        for col in [1, 6]:
-            self.__board[0][col] = Knight(WHITE)
-            self.__board[7][col] = Knight(BLACK)
+        for col in [2, 5]:
+            self.__board[0][col] = Bishop(WHITE)
+            self.__board[7][col] = Bishop(BLACK)
+        for col in [4]:
+            self.__board[0][col] = King(WHITE)
+            self.__board[7][col] = King(BLACK)
+        for col in [3]:
+            self.__board[0][col] = Queen(WHITE)
+            self.__board[7][col] = Queen(BLACK)
 
 
     @property
